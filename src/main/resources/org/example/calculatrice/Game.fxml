@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<HBox fx:id="windowbackgroundcolor" alignment="CENTER" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.calculatrice.game.GameController">
+   <children>
+      <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0">
+         <children>
+            <AnchorPane fx:id="gamebackground1" layoutX="19.0" layoutY="140.0" style="-fx-background-color: #7cffe3; -fx-border-width: 5; -fx-border-color: black;" visible="false">
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="15.0" layoutY="264.0" stroke="BLACK" strokeType="INSIDE" width="50.0">
+                     <cursor>
+                        <Cursor fx:constant="WAIT" />
+                     </cursor>
+                  </Rectangle>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="695.0" layoutY="15.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+                  <Line endX="-114.0" endY="-18.0" layoutX="520.0" layoutY="191.0" onMouseEntered="#doNotTouch" startX="-114.0" startY="65.0" strokeWidth="4.0" />
+                  <Line endX="536.0" endY="28.5" layoutX="207.0" layoutY="283.0" onMouseEntered="#doNotTouch" startX="-141.0" startY="28.5" strokeWidth="4.0" />
+                  <Line endX="-40.0" endY="-56.0" layoutX="204.0" layoutY="236.0" onMouseEntered="#doNotTouch" startX="-139.0" startY="28.0" strokeWidth="4.0" />
+                  <Line fx:id="blocusshow3" endX="-45.0" endY="40.0" layoutX="177.0" layoutY="125.0" onMouseEntered="#doNotTouch" startX="-25.0" startY="54.17156982421875" strokeWidth="4.0" visible="false" />
+                  <Line endX="269.5" endY="171.0" layoutX="473.0" layoutY="141.0" onMouseEntered="#doNotTouch" startX="269.5" startY="-75.0" strokeWidth="4.0" />
+                  <Line endX="-175.0" endY="69.5" layoutX="241.0" layoutY="197.0" onMouseEntered="#doNotTouch" startX="460.0" startY="69.5" strokeWidth="4.0" />
+                  <Line endX="-166.0" endY="69.5" layoutX="220.0" layoutY="51.0" onMouseEntered="#doNotTouch" startX="-11.0" startY="69.5" strokeWidth="4.0" />
+                  <Line endX="74.0" layoutX="289.0" layoutY="236.0" onMouseEntered="#doNotTouch" startX="-122.17156982421875" strokeWidth="4.0" />
+                  <Line endX="-52.0" endY="-5.0" layoutX="325.0" layoutY="92.0" onMouseEntered="#doNotTouch" startX="-114.0" startY="28.0" strokeWidth="4.0" />
+                  <Line endX="-5.0" endY="-9.0" layoutX="147.0" layoutY="231.0" onMouseEntered="#doNotTouch" startX="-5.0" startY="32.29290771484375" strokeWidth="4.0" />
+                  <Line endX="-53.0" endY="-9.0" layoutX="162.0" layoutY="91.0" onMouseEntered="#doNotTouch" startX="-108.0" startY="-9.0" strokeWidth="4.0" />
+                  <Line endX="-5.0" endY="-30.292877197265625" layoutX="255.0" layoutY="132.0" onMouseEntered="#doNotTouch" startX="-5.0" startY="33.0" strokeWidth="4.0" />
+                  <Line endX="-5.0" endY="-9.0" layoutX="215.0" layoutY="164.0" onMouseEntered="#doNotTouch" startX="-5.0" startY="62.0" strokeWidth="4.0" />
+                  <Line fx:id="blocusshow1" endX="-5.0" endY="-9.0" layoutX="735.0" layoutY="118.0" onMouseEntered="#doNotTouch" startX="-24.0" startY="-9.0" strokeWidth="4.0" visible="false" />
+                  <Line fx:id="blocusshow7" endX="-47.0" endY="11.0" layoutX="403.0" layoutY="67.0" onMouseEntered="#doNotTouch" startX="-47.0" startY="77.0" strokeWidth="4.0" visible="false" />
+                  <Line endX="74.0" layoutX="231.0" layoutY="85.0" onMouseEntered="#doNotTouch" startX="-29.0" strokeWidth="4.0" />
+                  <Line endX="-49.0" endY="-9.0" layoutX="135.0" layoutY="49.0" onMouseEntered="#doNotTouch" startX="-108.0" startY="-9.0" strokeWidth="4.0" />
+                  <Line endX="56.0" endY="6.0" layoutX="111.0" layoutY="21.0" onMouseEntered="#doNotTouch" startX="-17.0" startY="59.0" strokeWidth="4.0" />
+                  <Line endX="536.0" endY="28.5" layoutX="158.0" layoutY="-11.0" onMouseEntered="#doNotTouch" startX="-141.0" startY="28.5" strokeWidth="4.0" />
+                  <Line endX="269.5" endY="171.0" layoutX="-252.0" layoutY="92.0" onMouseEntered="#doNotTouch" startX="269.5" startY="-75.0" strokeWidth="4.0" />
+                  <Line endX="-76.0" endY="-22.0" layoutX="198.0" layoutY="184.0" onMouseEntered="#doNotTouch" startX="-157.0" startY="42.0" strokeWidth="4.0" />
+                  <Line endX="44.0" endY="66.0" layoutX="657.0" layoutY="199.0" onMouseEntered="#doNotTouch" startX="44.0" startY="-88.0" strokeWidth="4.0" />
+                  <Line fx:id="blocusshow8" endX="-8.0" layoutX="175.0" layoutY="66.0" onMouseEntered="#doNotTouch" startX="-8.0" startY="25.0" strokeWidth="4.0" visible="false" />
+                  <Line fx:id="blocusshow4" endX="-8.0" layoutX="128.0" layoutY="81.0" onMouseEntered="#doNotTouch" startX="-8.0" startY="28.0" strokeWidth="4.0" visible="false" />
+                  <Line endX="-114.0" endY="-26.0" layoutX="409.0" layoutY="155.0" onMouseEntered="#doNotTouch" startX="-114.0" startY="55.0" strokeWidth="4.0" />
+                  <Line endX="74.0" layoutX="219.0" layoutY="52.0" onMouseEntered="#doNotTouch" startX="-7.0" strokeWidth="4.0" />
+                  <Line endX="56.0" endY="6.0" layoutX="143.0" layoutY="44.0" onMouseEntered="#doNotTouch" startX="34.0" startY="18.0" strokeWidth="4.0" />
+                  <Line endX="-103.0" endY="1.0" layoutX="405.0" layoutY="53.0" onMouseEntered="#doNotTouch" startX="-51.0" startY="23.0" strokeWidth="4.0" />
+                  <Line endX="51.0" layoutX="318.0" layoutY="170.0" onMouseEntered="#doNotTouch" startX="-21.0" strokeWidth="4.0" />
+                  <Line endX="-106.0" endY="17.0" layoutX="430.0" layoutY="151.0" onMouseEntered="#doNotTouch" startX="-25.82843017578125" startY="-36.82843017578125" strokeWidth="4.0" />
+                  <Line endX="-100.0" endY="18.0" layoutX="543.0" layoutY="224.0" onMouseEntered="#doNotTouch" startX="25.0" startY="-140.0" strokeWidth="4.0" />
+                  <Line endX="29.0" endY="-19.0" layoutX="553.0" layoutY="234.0" onMouseEntered="#doNotTouch" startX="-74.0" startY="-78.0" strokeWidth="4.0" />
+                  <Line endX="-76.5" endY="-132.82843017578125" layoutX="563.0" layoutY="244.0" onMouseEntered="#doNotTouch" startX="-171.0" startY="-172.0" strokeWidth="4.0" />
+                  <Line endX="-83.67156982421875" endY="-142.82843017578125" layoutX="573.0" layoutY="254.0" onMouseEntered="#doNotTouch" startX="-45.0" startY="-184.0" strokeWidth="4.0" />
+                  <Line endX="74.0" layoutX="620.0" layoutY="25.0" onMouseEntered="#doNotTouch" startX="-100.0" strokeWidth="4.0" />
+                  <Line fx:id="blocusshow9" endX="-83.67156982421875" endY="-142.82843017578125" layoutX="614.0" layoutY="211.0" onMouseEntered="#doNotTouch" startX="-45.0" startY="-184.0" strokeWidth="4.0" visible="false" />
+                  <Line endX="-114.0" endY="-26.0" layoutX="707.0" layoutY="147.0" onMouseEntered="#doNotTouch" startX="-114.0" startY="28.0" strokeWidth="4.0" />
+                  <Line endX="-114.0" endY="-72.0" layoutX="747.0" layoutY="157.0" onMouseEntered="#doNotTouch" startX="-114.0" startY="68.0" strokeWidth="4.0" />
+                  <Line fx:id="blocusshow2" endX="-5.0" endY="-9.0" layoutX="628.0" layoutY="156.0" onMouseEntered="#doNotTouch" startX="-24.0" startY="-9.0" strokeWidth="4.0" visible="false" />
+                  <Line fx:id="blocusshow5" endX="-26.5" endY="-1.0" layoutX="239.0" layoutY="153.0" onMouseEntered="#doNotTouch" startX="2.0" startY="14.0" strokeWidth="4.0" visible="false" />
+                  <Line fx:id="blocusshow6" endX="-71.0" endY="4.0" layoutX="477.0" layoutY="167.0" onMouseEntered="#doNotTouch" startX="-42.0" startY="-33.0" strokeWidth="4.0" visible="false" />
+                  <Line endX="-38.0" endY="-57.0" layoutX="481.0" layoutY="195.0" onMouseEntered="#doNotTouch" startX="-74.0" startY="-78.0" strokeWidth="4.0" />
+                  <Line endX="51.0" layoutX="532.0" layoutY="157.0" onMouseEntered="#doNotTouch" startX="-7.0" strokeWidth="4.0" />
+                  <Line fx:id="blocusshow10" endX="12.0" endY="-33.0" layoutX="570.0" layoutY="60.0" onMouseEntered="#doNotTouch" startX="0.82843017578125" startY="21.17156982421875" strokeWidth="4.0" visible="false" />
+                  <Line endX="-114.0" endY="-26.0" layoutX="779.0" layoutY="157.0" onMouseEntered="#doNotTouch" startX="-114.0" startY="28.0" strokeWidth="4.0" />
+                  <Line endX="18.0" layoutX="663.0" layoutY="82.0" onMouseEntered="#doNotTouch" startX="-7.0" strokeWidth="4.0" />
+                  <ImageView fx:id="depart" fitHeight="39.0" fitWidth="42.0" layoutX="19.0" layoutY="270.0" onMouseMoved="#enclenchement" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fx:id="arrivé" fitHeight="44.0" fitWidth="42.0" layoutX="699.0" layoutY="21.0" onMouseMoved="#arrive" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../gameImages/Acceuile.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="icones7" fitHeight="25.0" fitWidth="25.0" layoutX="697.0" layoutY="80.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                     <image>
+                        <Image url="@../../../gameImages/istockphoto-1212960962-612x612.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="icones8" fitHeight="25.0" fitWidth="25.0" layoutX="144.0" layoutY="139.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                     <image>
+                        <Image url="@../../../gameImages/istockphoto-1212960962-612x612.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="icones11" fitHeight="25.0" fitWidth="25.0" layoutX="230.0" layoutY="186.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                     <image>
+                        <Image url="@../../../gameImages/istockphoto-1212960962-612x612.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="icones10" fitHeight="25.0" fitWidth="25.0" layoutX="132.0" layoutY="87.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                     <image>
+                        <Image url="@../../../gameImages/istockphoto-1212960962-612x612.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="icones25" fitHeight="25.0" fitWidth="25.0" layoutX="601.0" layoutY="110.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                     <image>
+                        <Image url="@../../../gameImages/istockphoto-1212960962-612x612.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="icones21" fitHeight="25.0" fitWidth="25.0" layoutX="623.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                     <image>
+                        <Image url="@../../../gameImages/istockphoto-1212960962-612x612.jpg" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="colorbutton1" layoutX="126.0" layoutY="277.0" mnemonicParsing="false" onMouseMoved="#button1" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: transparent;" />
+                  <Button fx:id="colorbutton2" layoutX="224.0" layoutY="277.0" mnemonicParsing="false" onMouseMoved="#button2" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: transparent;" />
+                  <Button fx:id="colorbutton3" layoutX="345.0" layoutY="277.0" mnemonicParsing="false" onMouseMoved="#button3" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: transparent;" />
+                  <Button fx:id="colorbutton4" layoutX="463.0" layoutY="277.0" mnemonicParsing="false" onMouseMoved="#button4" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: transparent;" />
+                  <Button fx:id="colorbutton5" layoutX="600.0" layoutY="277.0" mnemonicParsing="false" onMouseMoved="#button5" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: transparent;" />
+                  <Button fx:id="colorbutton7" layoutX="708.0" layoutY="158.0" mnemonicParsing="false" onMouseMoved="#button7" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: transparent;" />
+                  <Button fx:id="colorbutton6" layoutX="708.0" layoutY="277.0" mnemonicParsing="false" onMouseMoved="#button6" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: transparent;" />
+                  <Button fx:id="colorbutton25" layoutX="595.0" layoutY="199.0" mnemonicParsing="false" onMouseMoved="#button25" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: transparent;">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="colorbutton8" layoutX="114.0" layoutY="175.0" mnemonicParsing="false" onMouseMoved="#button8" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: transparent;" />
+                  <Button fx:id="colorbutton10" layoutX="82.0" layoutY="88.0" mnemonicParsing="false" onMouseMoved="#button10" prefHeight="25.0" prefWidth="31.0" style="-fx-background-color: transparent;" />
+                  <Button fx:id="colorbutton11" layoutX="200.0" layoutY="127.0" mnemonicParsing="false" onMouseMoved="#button11" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: transparent;">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="colorbutton14" layoutX="376.0" layoutY="165.0" mnemonicParsing="false" onMouseMoved="#button14" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: transparent;">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="colorbutton16" layoutX="295.0" layoutY="95.0" mnemonicParsing="false" onMouseMoved="#button16" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: transparent;">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="colorbutton17" layoutX="177.0" layoutY="68.0" mnemonicParsing="false" onMouseMoved="#button17" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: transparent;">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="colorbutton21" layoutX="493.0" layoutY="40.0" mnemonicParsing="false" onMouseMoved="#button21" prefHeight="25.0" prefWidth="31.0" style="-fx-background-color: transparent;">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="colorbutton23" layoutX="520.0" layoutY="80.0" mnemonicParsing="false" onMouseMoved="#button23" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: transparent;">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="colorbutton9" layoutX="45.0" layoutY="147.0" mnemonicParsing="false" onMouseMoved="#button9" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: transparent;" />
+                  <Button fx:id="colorbutton12" layoutX="165.0" layoutY="191.0" mnemonicParsing="false" onMouseMoved="#button12" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: transparent;">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="colorbutton13" layoutX="252.0" layoutY="238.0" mnemonicParsing="false" onMouseMoved="#button13" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: transparent;">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="colorbutton15" layoutX="263.0" layoutY="178.0" mnemonicParsing="false" onMouseMoved="#button15" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: transparent;">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="colorbutton18" layoutX="130.0" layoutY="59.0" mnemonicParsing="false" onMouseMoved="#button18" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: transparent;">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="colorbutton19" layoutX="297.0" layoutY="22.0" mnemonicParsing="false" onMouseMoved="#button19" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: transparent;">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="colorbutton22" layoutX="419.0" layoutY="95.0" mnemonicParsing="false" onMouseMoved="#button22" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: transparent;">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="colorbutton20" layoutX="407.0" layoutY="35.0" mnemonicParsing="false" onMouseMoved="#button20" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: transparent;">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="colorbutton24" layoutX="419.0" layoutY="205.0" mnemonicParsing="false" onMouseMoved="#button24" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: transparent;">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="colorbutton27" layoutX="637.0" layoutY="160.0" mnemonicParsing="false" onMouseMoved="#button27" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: transparent;">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="colorbutton28" layoutX="671.0" layoutY="160.0" mnemonicParsing="false" onMouseMoved="#button28" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: transparent;">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="colorbutton26" layoutX="581.0" layoutY="59.0" mnemonicParsing="false" onMouseMoved="#button26" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: transparent;">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="colorbutton29" layoutX="659.0" layoutY="43.0" mnemonicParsing="false" onMouseMoved="#button29" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: transparent;">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="reset5" layoutX="297.0" layoutY="191.0" mnemonicParsing="false" onMouseMoved="#changetext" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: transparent;" />
+                  <Button fx:id="reset8" layoutX="463.0" layoutY="31.0" mnemonicParsing="false" onMouseMoved="#changetext" prefHeight="58.0" prefWidth="25.0" style="-fx-background-color: transparent;" />
+                  <Button fx:id="reset7" layoutX="162.0" layoutY="91.0" mnemonicParsing="false" onMouseMoved="#changetext" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: transparent;" />
+                  <Button fx:id="reset6" layoutX="317.0" layoutY="72.0" mnemonicParsing="false" onMouseMoved="#changetext" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: transparent;" />
+                  <Button fx:id="reset4" layoutX="175.0" layoutY="152.0" mnemonicParsing="false" onMouseMoved="#changetext" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: transparent;" />
+                  <Button fx:id="reset1" layoutX="85.0" layoutY="193.0" mnemonicParsing="false" onMouseMoved="#changetext" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: transparent;" />
+                  <Button fx:id="reset2" layoutX="52.0" layoutY="90.0" mnemonicParsing="false" onMouseMoved="#changetext" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: transparent;" />
+                  <Button fx:id="reset3" layoutX="708.0" layoutY="188.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: transparent;" />
+                  <Button fx:id="reset10" layoutX="621.0" layoutY="236.0" mnemonicParsing="false" onMouseMoved="#changetext" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: transparent;" />
+                  <Button fx:id="reset9" layoutX="496.0" layoutY="110.0" mnemonicParsing="false" onMouseMoved="#changetext" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: transparent;" />
+               </children>
+               <cursor>
+                  <Cursor fx:constant="WAIT" />
+               </cursor>
+            </AnchorPane>
+            <Text fx:id="message" layoutX="305.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" wrappingWidth="282.89453125">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Text>
+            <Text fx:id="message1" layoutX="305.0" layoutY="106.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" wrappingWidth="282.89453125">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Text>
+            <ColorPicker fx:id="couleur" layoutX="15.0" layoutY="67.0" prefHeight="27.0" prefWidth="105.0" />
+            <ChoiceBox fx:id="colorchoice" layoutX="15.0" layoutY="23.0" prefHeight="25.0" prefWidth="105.0" />
+            <Button layoutX="41.0" layoutY="109.0" mnemonicParsing="false" onMouseClicked="#validercouleur" text="Valider" />
+            <Button fx:id="commencer" layoutX="19.0" layoutY="465.0" mnemonicParsing="false" onMouseClicked="#Go" prefHeight="4.0" prefWidth="81.0" text="Commencer" visible="false" />
+            <ImageView fx:id="successimage" fitHeight="120.0" fitWidth="184.0" layoutX="589.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../../gameImages/istockphoto-626205158-612x612.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="defeatimage" fitHeight="120.0" fitWidth="184.0" layoutX="125.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../../gameImages/istockphoto-1146642361-612x612.jpg" />
+               </image>
+            </ImageView>
+            <Button layoutX="338.0" layoutY="469.0" mnemonicParsing="false" onMouseClicked="#game1" text="GAME 1">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button layoutX="455.0" layoutY="469.0" mnemonicParsing="false" onMouseClicked="#game2" text="GAME 2">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Text fx:id="regle1" layoutX="261.0" layoutY="177.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dans ce jeu, vous devez utlisez la sourie pour parcourire un chemin rempli d'obstacle. ATTENTION, évitez de toucher les ligne noir, sinon, vous perdez. " visible="false" wrappingWidth="369.65685653686523">
+               <font>
+                  <Font name="System Bold Italic" size="25.0" />
+               </font>
+            </Text>
+            <Text fx:id="regle2" layoutX="246.0" layoutY="203.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dans ce jeu, vous devrez deviner un nombre que la machine aurras déjà choisie au hasard. votre score dependras de votre nombre d'éssaie." visible="false" wrappingWidth="398.62890625">
+               <font>
+                  <Font name="System Bold Italic" size="25.0" />
+               </font>
+            </Text>
+            <HBox fx:id="gamebackground2" alignment="CENTER" layoutX="47.0" layoutY="161.0" prefHeight="250.0" prefWidth="681.0" visible="false">
+               <children>
+                  <VBox alignment="CENTER">
+                     <children>
+                        <Text fx:id="leftTopText" strokeType="OUTSIDE" strokeWidth="0.0" text="Meilleure score" textAlignment="CENTER" wrappingWidth="160.341796875">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="35.0" />
+                           </VBox.margin>
+                        </Text>
+                        <Text fx:id="leftBottomText" layoutX="10.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0 essaie" textAlignment="CENTER" wrappingWidth="160.341796875">
+                           <font>
+                              <Font size="25.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </VBox>
+                  <ImageView fx:id="doigtbas" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                     <image>
+                        <Image url="@../../../gameImages/pngegg.png" />
+                     </image>
+                  </ImageView>
+                  <VBox alignment="CENTER" prefHeight="250.0" prefWidth="119.0">
+                     <children>
+                        <Text fx:id="centerText" strokeType="OUTSIDE" strokeWidth="0.0" text="1 essaie(es)" textAlignment="CENTER" wrappingWidth="104.13671875">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="25.0" />
+                           </VBox.margin>
+                        </Text>
+                        <TextField fx:id="devineMe" alignment="CENTER" onKeyPressed="#reelvalide" prefHeight="25.0" prefWidth="105.0" promptText="Devinez-moi">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="12.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <Button mnemonicParsing="false" onMouseClicked="#validenumber" text="Valider" />
+                        <Button fx:id="levelchange" mnemonicParsing="false" onMouseClicked="#levelchange2" prefHeight="25.0" prefWidth="125.0" text="0 à 100">
+                           <VBox.margin>
+                              <Insets top="50.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <ImageView fx:id="doigthaut" fitHeight="150.0" fitWidth="200.0" layoutX="223.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true" rotate="180.0" visible="false">
+                     <image>
+                        <Image url="@../../../gameImages/pngegg.png" />
+                     </image>
+                  </ImageView>
+                  <VBox alignment="CENTER">
+                     <children>
+                        <TableView prefHeight="257.0" prefWidth="102.0">
+                          <columns>
+                            <TableColumn prefWidth="114.0" text="hist..." />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <Button fx:id="lanceur" layoutX="334.0" layoutY="429.0" mnemonicParsing="false" onMouseClicked="#lanceur2" prefHeight="25.0" prefWidth="186.0" text="Lancer" visible="false">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <VBox fx:id="levelface" layoutX="337.0" layoutY="186.0" spacing="20.0" visible="false">
+               <children>
+                  <RadioButton fx:id="debutant" mnemonicParsing="false" prefHeight="17.0" prefWidth="180.0" selected="true" text="Debutant (0 à 100)">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="level" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="interm" mnemonicParsing="false" text="Intermedière (0 à 500)" toggleGroup="$level" />
+                  <RadioButton fx:id="avancer" mnemonicParsing="false" text="Avancé (0 à 1000)" toggleGroup="$level" />
+                  <RadioButton fx:id="expert" mnemonicParsing="false" text="Expert (0 à 10000)" toggleGroup="$level" />
+               </children>
+            </VBox>
+            <ImageView fx:id="game2img1" fitHeight="150.0" fitWidth="200.0" layoutX="146.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../../gameImages/istockphoto-629771548-612x612.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="game2img2" fitHeight="150.0" fitWidth="200.0" layoutX="558.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../../gameImages/istockphoto-629771548-612x612.jpg" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </children>
+</HBox>

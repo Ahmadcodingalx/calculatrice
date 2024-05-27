@@ -1,0 +1,1032 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<StackPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.calculatrice.calculatrice.CalcController">
+   <children>
+      <AnchorPane>
+         <children>
+            <AnchorPane prefHeight="37.0" prefWidth="800.0">
+               <children>
+                  <HBox alignment="CENTER" spacing="150.0">
+                     <children>
+                        <HBox>
+                           <children>
+                              <Button mnemonicParsing="false" onMouseClicked="#gameRedirection" style="-fx-background-color: #F3FFFB; -fx-border-color: black; -fx-border-radius: 10; -fx-background-radius: 10;" text="Jeux">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Button>
+                              <HBox alignment="CENTER" prefHeight="27.0" prefWidth="263.0" spacing="4.0">
+                                 <children>
+                                    <ChoiceBox fx:id="calc_type" prefHeight="25.0" prefWidth="79.0" style="-fx-background-color: transparent;">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </ChoiceBox>
+                                 </children>
+                              </HBox>
+                              <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#deleteHist" style="-fx-background-color: #F3FFFB; -fx-border-color: black; -fx-background-radius: 10; -fx-border-radius: 10;" text="Vider hist.">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                           <padding>
+                              <Insets left="2.0" top="2.0" />
+                           </padding>
+                        </HBox>
+                        <Label fx:id="Calc_types2" onMouseClicked="#changeMode" text="Standard">
+                           <font>
+                              <Font name="System Bold" size="25.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Label>
+                     </children>
+                  </HBox>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="Standard" layoutY="45.0" prefHeight="498.0" prefWidth="800.0" visible="false">
+               <children>
+                  <HBox alignment="CENTER" layoutX="3.0" layoutY="16.0" prefHeight="469.0" prefWidth="795.0">
+                     <children>
+                        <VBox alignment="CENTER" prefHeight="157.0" prefWidth="395.0">
+                           <children>
+                              <TableView fx:id="historyTable" prefHeight="468.0" prefWidth="395.0" style="-fx-background-radius: 10; -fx-border-radius: 10;">
+                                <columns>
+                                  <TableColumn fx:id="historyOfCalc" maxWidth="402.0" prefWidth="394.0" text="Historique" />
+                                </columns>
+                                 <VBox.margin>
+                                    <Insets top="3.0" />
+                                 </VBox.margin>
+                              </TableView>
+                           </children>
+                           <padding>
+                              <Insets top="8.0" />
+                           </padding>
+                        </VBox>
+                        <VBox alignment="CENTER" prefHeight="620.0" prefWidth="400.0">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                           <children>
+                              <AnchorPane fx:id="standard_screen" prefHeight="106.0" prefWidth="400.0">
+                                 <children>
+                                    <TextField fx:id="operationZone" alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="400.0" style="-fx-background-color: transparent;">
+                                       <font>
+                                          <Font name="System Bold" size="22.0" />
+                                       </font>
+                                    </TextField>
+                                    <TextField fx:id="answerZone" alignment="CENTER_RIGHT" layoutY="51.0" prefHeight="57.0" prefWidth="400.0" style="-fx-background-color: transparent;">
+                                       <font>
+                                          <Font name="System Bold" size="25.0" />
+                                       </font>
+                                    </TextField>
+                                 </children>
+                              </AnchorPane>
+                              <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#reset" prefHeight="25.0" prefWidth="385.0" text="Clear">
+                                 <font>
+                                    <Font name="System Bold Italic" size="18.0" />
+                                 </font>
+                              </Button>
+                              <GridPane alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="322.0" prefWidth="393.0">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="80.0" />
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="80.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="80.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="80.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                  <RowConstraints maxHeight="60.0" minHeight="10.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="0.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#nombreEntié" prefHeight="60.0" prefWidth="100.0" text="1">
+                                       <font>
+                                          <Font name="System Bold Italic" size="25.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="4.0" />
+                                       </GridPane.margin>
+                                    </Button>
+                                    <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#nombreEntié" prefHeight="60.0" prefWidth="100.0" text="2" GridPane.columnIndex="1">
+                                       <font>
+                                          <Font name="System Bold Italic" size="25.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="4.0" />
+                                       </GridPane.margin>
+                                    </Button>
+                                    <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#nombreEntié" prefHeight="60.0" prefWidth="100.0" text="3" GridPane.columnIndex="2">
+                                       <font>
+                                          <Font name="System Bold Italic" size="25.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="4.0" />
+                                       </GridPane.margin>
+                                    </Button>
+                                    <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#nombreEntié" prefHeight="60.0" prefWidth="100.0" text="4" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font name="System Bold Italic" size="25.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="4.0" />
+                                       </GridPane.margin>
+                                    </Button>
+                                    <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#nombreEntié" prefHeight="60.0" prefWidth="100.0" text="5" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font name="System Bold Italic" size="25.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="4.0" />
+                                       </GridPane.margin>
+                                    </Button>
+                                    <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#nombreEntié" prefHeight="60.0" prefWidth="100.0" text="6" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font name="System Bold Italic" size="25.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="4.0" />
+                                       </GridPane.margin>
+                                    </Button>
+                                    <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#nombreEntié" prefHeight="60.0" prefWidth="100.0" text="7" GridPane.rowIndex="2">
+                                       <font>
+                                          <Font name="System Bold Italic" size="25.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="4.0" />
+                                       </GridPane.margin>
+                                    </Button>
+                                    <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#nombreEntié" prefHeight="60.0" prefWidth="100.0" text="8" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                       <font>
+                                          <Font name="System Bold Italic" size="25.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="4.0" />
+                                       </GridPane.margin>
+                                    </Button>
+                                    <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#nombreEntié" prefHeight="60.0" prefWidth="100.0" text="9" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                       <font>
+                                          <Font name="System Bold Italic" size="25.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="4.0" />
+                                       </GridPane.margin>
+                                    </Button>
+                                    <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#nombreEntié" prefHeight="60.0" prefWidth="100.0" text="0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                       <font>
+                                          <Font name="System Bold Italic" size="25.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="4.0" />
+                                       </GridPane.margin>
+                                    </Button>
+                                    <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="60.0" prefWidth="100.0" text="(" GridPane.rowIndex="3">
+                                       <font>
+                                          <Font name="System Bold Italic" size="25.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="4.0" />
+                                       </GridPane.margin>
+                                       </Button>
+                                    <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="60.0" prefWidth="100.0" text=")" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                                       <font>
+                                          <Font name="System Bold Italic" size="25.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="4.0" />
+                                       </GridPane.margin>
+                                    </Button>
+                                    <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#generale" prefHeight="60.0" prefWidth="100.0" text="+" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                                       <font>
+                                          <Font name="System Bold Italic" size="25.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="4.0" />
+                                       </GridPane.margin>
+                                    </Button>
+                                    <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#generale" prefHeight="60.0" prefWidth="100.0" text="-" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                                       <font>
+                                          <Font name="System Bold Italic" size="25.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="4.0" />
+                                       </GridPane.margin>
+                                    </Button>
+                                    <Button alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#generale" prefHeight="60.0" prefWidth="100.0" text="*" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font name="System Bold Italic" size="25.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="4.0" />
+                                       </GridPane.margin>
+                                    </Button>
+                                    <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#generale" prefHeight="60.0" prefWidth="100.0" text="/" GridPane.columnIndex="3">
+                                       <font>
+                                          <Font name="System Bold Italic" size="25.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="4.0" />
+                                       </GridPane.margin>
+                                    </Button>
+                                    <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#egale" prefHeight="60.0" prefWidth="100.0" text="=" GridPane.columnIndex="3" GridPane.rowIndex="4">
+                                       <font>
+                                          <Font name="System Bold Italic" size="25.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="4.0" />
+                                       </GridPane.margin>
+                                    </Button>
+                                    <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#virgule" prefHeight="60.0" prefWidth="100.0" text="." GridPane.columnIndex="2" GridPane.rowIndex="4">
+                                       <font>
+                                          <Font name="System Bold Italic" size="25.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="4.0" />
+                                       </GridPane.margin>
+                                    </Button>
+                                    <Button layoutX="210.0" layoutY="130.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="60.0" prefWidth="100.0" text="EXP" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                       <font>
+                                          <Font name="System Bold Italic" size="15.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="4.0" />
+                                       </GridPane.margin>
+                                    </Button>
+                                    <Button layoutX="110.0" layoutY="130.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#generale" prefHeight="60.0" prefWidth="100.0" text="\%" GridPane.rowIndex="4">
+                                       <font>
+                                          <Font name="System Bold Italic" size="20.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="4.0" />
+                                       </GridPane.margin>
+                                    </Button>
+                                 </children>
+                              </GridPane>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="Fonctions" layoutX="-1.0" layoutY="36.0" prefHeight="500.0" prefWidth="800.0">
+               <children>
+                  <HBox layoutX="19.0" layoutY="31.0" spacing="27.0">
+                     <children>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="469.0" prefWidth="400.0">
+                           <children>
+                              <Accordion prefHeight="469.0" prefWidth="400.0">
+                                <panes>
+                                  <TitledPane animated="false" prefHeight="313.0" prefWidth="400.0" text="Domaine de definition (et tableau de signe)">
+                                    <content>
+                                          <ScrollPane prefHeight="243.0" prefWidth="398.0">
+                                             <content>
+                                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="215.0" prefWidth="396.0">
+                                                   <children>
+                                                      <Line endX="228.0" layoutX="134.0" layoutY="25.0" startX="-100.0" />
+                                                      <Line endX="228.0" layoutX="134.0" layoutY="63.0" startX="-100.0" />
+                                                      <Line endX="228.0" layoutX="134.0" layoutY="104.0" startX="-100.0" />
+                                                      <Line endX="-97.0" endY="10.0" layoutX="131.0" layoutY="15.0" startX="-97.5" startY="89.0" />
+                                                      <Line endX="-97.0" endY="10.0" layoutX="459.0" layoutY="15.0" startX="-97.5" startY="89.0" />
+                                                      <Line endX="-97.0" endY="10.0" layoutX="266.0" layoutY="15.0" startX="-97.5" startY="89.0" />
+                                                      <Label layoutX="93.0" layoutY="20.0" text="x">
+                                                         <font>
+                                                            <Font size="30.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <HBox alignment="CENTER" layoutX="65.0" layoutY="71.0">
+                                                         <children>
+                                                            <Text fx:id="a_tableauDeSigne" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+                                                               <font>
+                                                                  <Font size="16.0" />
+                                                               </font>
+                                                               <HBox.margin>
+                                                                  <Insets right="2.0" />
+                                                               </HBox.margin>
+                                                            </Text>
+                                                            <Label text="x + ">
+                                                               <font>
+                                                                  <Font size="18.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <Text fx:id="b_tableauDeSigne" layoutX="10.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+                                                               <font>
+                                                                  <Font size="16.0" />
+                                                               </font>
+                                                            </Text>
+                                                         </children>
+                                                      </HBox>
+                                                      <Label layoutX="182.0" layoutY="38.0" text="-oo" />
+                                                      <Label layoutX="334.0" layoutY="37.0" text="+oo" />
+                                                      <Line endX="-97.0" endY="10.0" layoutX="372.0" layoutY="54.0" startX="-97.0" startY="24.0" />
+                                                      <Label fx:id="DF_tableauDeSigne" layoutX="258.0" layoutY="37.0" text="00.00" />
+                                                      <Label layoutX="272.0" layoutY="76.0" text="0" />
+                                                      <Line endX="-97.0" endY="10.0" layoutX="372.0" layoutY="80.0" startX="-97.0" startY="24.0" />
+                                                      <HBox alignment="CENTER" layoutX="33.0" layoutY="146.0" style="-fx-border-color: #000;">
+                                                         <children>
+                                                            <Label prefHeight="25.0" prefWidth="102.0" text="DF =  ]  -oo ;  ">
+                                                               <font>
+                                                                  <Font size="16.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <Text fx:id="DF_guache" strokeType="OUTSIDE" strokeWidth="0.0" text="00.00">
+                                                               <font>
+                                                                  <Font size="16.0" />
+                                                               </font>
+                                                               <HBox.margin>
+                                                                  <Insets right="5.0" />
+                                                               </HBox.margin>
+                                                            </Text>
+                                                            <Label prefHeight="25.0" prefWidth="52.0" text="[  U  ]  ">
+                                                               <font>
+                                                                  <Font size="16.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <Text fx:id="DF_droite" strokeType="OUTSIDE" strokeWidth="0.0" text="00.00">
+                                                               <font>
+                                                                  <Font size="16.0" />
+                                                               </font>
+                                                               <HBox.margin>
+                                                                  <Insets right="5.0" />
+                                                               </HBox.margin>
+                                                            </Text>
+                                                            <Label prefHeight="25.0" prefWidth="59.0" text=";  +oo  [">
+                                                               <font>
+                                                                  <Font size="16.0" />
+                                                               </font>
+                                                            </Label>
+                                                         </children>
+                                                         <padding>
+                                                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                         </padding>
+                                                      </HBox>
+                                                      <Label fx:id="signe1_tableauDeSigne" layoutX="220.0" layoutY="65.0" text="?">
+                                                         <font>
+                                                            <Font name="System Bold" size="25.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label fx:id="signe2_tableauDeSigne" layoutX="312.0" layoutY="64.0" text="?">
+                                                         <font>
+                                                            <Font name="System Bold" size="25.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </AnchorPane>
+                                             </content>
+                                          </ScrollPane>
+                                    </content>
+                                  </TitledPane>
+                                  <TitledPane animated="false" prefWidth="406.0" text="Limites aux bornes de DF">
+                                    <content>
+                                          <ScrollPane>
+                                             <content>
+                                            <AnchorPane minHeight="0.0" minWidth="0.0" prefWidth="396.0">
+                                                   <children>
+                                                      <VBox layoutX="96.0" layoutY="14.0" spacing="23.0">
+                                                         <children>
+                                                            <Pane>
+                                                               <children>
+                                                                  <Label layoutX="2.0" prefHeight="36.0" prefWidth="65.0" text="Lim">
+                                                                     <font>
+                                                                        <Font size="38.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                                  <Line endX="100.0" layoutX="-62.5" layoutY="51.5" startX="78.0" />
+                                                                  <Line endX="100.0" layoutX="-61.0" layoutY="51.0" startX="90.5" startY="-6.5" />
+                                                                  <Line endX="100.0" layoutX="-61.20710754394531" layoutY="52.29289245605469" startX="90.5" startY="6.5" />
+                                                                  <Label layoutY="32.0" text="x">
+                                                                     <font>
+                                                                        <Font size="23.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                                  <Label layoutX="42.0" layoutY="40.0" text="-oo">
+                                                                     <font>
+                                                                        <Font size="14.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                                  <Label layoutX="68.0" layoutY="10.0" text="(fx)">
+                                                                     <font>
+                                                                        <Font size="28.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                                  <Label layoutX="110.0" layoutY="11.0" text="=">
+                                                                     <font>
+                                                                        <Font size="28.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                                  <Label fx:id="Lim_signe_infini1" layoutX="134.0" layoutY="12.0" text="? oo">
+                                                                     <font>
+                                                                        <Font size="28.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                               </children>
+                                                            </Pane>
+                                                            <Pane>
+                                                               <children>
+                                                                  <Label layoutX="2.0" prefHeight="36.0" prefWidth="65.0" text="Lim">
+                                                                     <font>
+                                                                        <Font size="38.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                                  <Line endX="100.0" layoutX="-62.5" layoutY="51.5" startX="78.0" />
+                                                                  <Line endX="100.0" layoutX="-61.0" layoutY="51.0" startX="90.5" startY="-6.5" />
+                                                                  <Line endX="100.0" layoutX="-61.20710754394531" layoutY="52.29289245605469" startX="90.5" startY="6.5" />
+                                                                  <Label layoutY="32.0" text="x">
+                                                                     <font>
+                                                                        <Font size="23.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                                  <Label fx:id="Lim_DF1" layoutX="42.0" layoutY="40.0" text="00">
+                                                                     <font>
+                                                                        <Font size="14.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                                  <Label layoutX="68.0" layoutY="10.0" text="(fx)">
+                                                                     <font>
+                                                                        <Font size="28.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                                  <Label layoutX="110.0" layoutY="11.0" text="=">
+                                                                     <font>
+                                                                        <Font size="28.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                                  <Label fx:id="Lim_signe_DF1" layoutX="134.0" layoutY="12.0" text="?">
+                                                                     <font>
+                                                                        <Font size="28.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                                  <Label layoutX="155.0" layoutY="10.0" text="oo">
+                                                                     <font>
+                                                                        <Font size="28.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                               </children>
+                                                            </Pane>
+                                                            <Pane>
+                                                               <children>
+                                                                  <Label layoutX="2.0" prefHeight="36.0" prefWidth="65.0" text="Lim">
+                                                                     <font>
+                                                                        <Font size="38.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                                  <Line endX="100.0" layoutX="-62.5" layoutY="51.5" startX="78.0" />
+                                                                  <Line endX="100.0" layoutX="-61.0" layoutY="51.0" startX="90.5" startY="-6.5" />
+                                                                  <Line endX="100.0" layoutX="-61.20710754394531" layoutY="52.29289245605469" startX="90.5" startY="6.5" />
+                                                                  <Label layoutY="32.0" text="x">
+                                                                     <font>
+                                                                        <Font size="23.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                                  <Label fx:id="Lim_DF2" layoutX="42.0" layoutY="40.0" text="00">
+                                                                     <font>
+                                                                        <Font size="14.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                                  <Label layoutX="68.0" layoutY="10.0" text="(fx)">
+                                                                     <font>
+                                                                        <Font size="28.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                                  <Label layoutX="110.0" layoutY="11.0" text="=">
+                                                                     <font>
+                                                                        <Font size="28.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                                  <Label fx:id="Lim_signe_DF2" layoutX="134.0" layoutY="12.0" text="?">
+                                                                     <font>
+                                                                        <Font size="28.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                                  <Label layoutX="155.0" layoutY="10.0" text="oo">
+                                                                     <font>
+                                                                        <Font size="28.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                               </children>
+                                                            </Pane>
+                                                            <Pane>
+                                                               <children>
+                                                                  <Label layoutX="2.0" prefHeight="36.0" prefWidth="65.0" text="Lim">
+                                                                     <font>
+                                                                        <Font size="38.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                                  <Line endX="100.0" layoutX="-62.5" layoutY="51.5" startX="78.0" />
+                                                                  <Line endX="100.0" layoutX="-61.0" layoutY="51.0" startX="90.5" startY="-6.5" />
+                                                                  <Line endX="100.0" layoutX="-61.20710754394531" layoutY="52.29289245605469" startX="90.5" startY="6.5" />
+                                                                  <Label layoutY="32.0" text="x">
+                                                                     <font>
+                                                                        <Font size="23.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                                  <Label layoutX="42.0" layoutY="40.0" text="+oo">
+                                                                     <font>
+                                                                        <Font size="14.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                                  <Label layoutX="68.0" layoutY="10.0" text="(fx)">
+                                                                     <font>
+                                                                        <Font size="28.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                                  <Label layoutX="110.0" layoutY="11.0" text="=">
+                                                                     <font>
+                                                                        <Font size="28.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                                  <Label fx:id="Lim_signe_infini2" layoutX="134.0" layoutY="12.0" text="? oo">
+                                                                     <font>
+                                                                        <Font size="28.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                               </children>
+                                                            </Pane>
+                                                         </children>
+                                                      </VBox>
+                                                   </children>
+                                                   <padding>
+                                                      <Insets bottom="10.0" />
+                                                   </padding>
+                                                </AnchorPane>
+                                             </content>
+                                          </ScrollPane>
+                                    </content>
+                                  </TitledPane>
+                                  <TitledPane animated="false" text="Dérivée f'(x)">
+                                    <content>
+                                          <ScrollPane>
+                                             <content>
+                                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="282.0" prefWidth="343.0">
+                                                   <children>
+                                                      <HBox alignment="CENTER" layoutX="74.0" layoutY="47.0">
+                                                         <children>
+                                                            <Label text="f(x) = ">
+                                                               <font>
+                                                                  <Font size="26.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <VBox>
+                                                               <children>
+                                                                  <HBox alignment="CENTER" styleClass="borderBottomHbox" stylesheets="@../../../css/style.css">
+                                                                     <children>
+                                                                        <Text fx:id="Derive_fx_a" strokeType="OUTSIDE" strokeWidth="0.0" text="00">
+                                                                           <font>
+                                                                              <Font size="15.0" />
+                                                                           </font>
+                                                                           <HBox.margin>
+                                                                              <Insets top="3.0" />
+                                                                           </HBox.margin>
+                                                                        </Text>
+                                                                        <Label text="x²">
+                                                                           <font>
+                                                                              <Font size="22.0" />
+                                                                           </font>
+                                                                        </Label>
+                                                                        <Label text="+">
+                                                                           <font>
+                                                                              <Font size="25.0" />
+                                                                           </font>
+                                                                        </Label>
+                                                                        <Text fx:id="Derivé_fx_b" strokeType="OUTSIDE" strokeWidth="0.0" text="00">
+                                                                           <font>
+                                                                              <Font size="15.0" />
+                                                                           </font>
+                                                                           <HBox.margin>
+                                                                              <Insets top="3.0" />
+                                                                           </HBox.margin>
+                                                                        </Text>
+                                                                        <Label prefHeight="20.0" prefWidth="11.0" text="x">
+                                                                           <font>
+                                                                              <Font size="22.0" />
+                                                                           </font>
+                                                                        </Label>
+                                                                        <Label text="+">
+                                                                           <font>
+                                                                              <Font size="25.0" />
+                                                                           </font>
+                                                                        </Label>
+                                                                        <Text fx:id="Derivé_fx_c" strokeType="OUTSIDE" strokeWidth="0.0" text="00">
+                                                                           <font>
+                                                                              <Font size="15.0" />
+                                                                           </font>
+                                                                           <HBox.margin>
+                                                                              <Insets top="3.0" />
+                                                                           </HBox.margin>
+                                                                        </Text>
+                                                                     </children>
+                                                                     <VBox.margin>
+                                                                        <Insets />
+                                                                     </VBox.margin>
+                                                                     <padding>
+                                                                        <Insets left="5.0" right="5.0" />
+                                                                     </padding>
+                                                                  </HBox>
+                                                                  <HBox alignment="CENTER" styleClass="borderTopHbox" stylesheets="@../../../css/style.css">
+                                                                     <children>
+                                                                        <Text fx:id="Derivé_fx_d" strokeType="OUTSIDE" strokeWidth="0.0" text="00">
+                                                                           <font>
+                                                                              <Font size="15.0" />
+                                                                           </font>
+                                                                           <HBox.margin>
+                                                                              <Insets top="3.0" />
+                                                                           </HBox.margin>
+                                                                        </Text>
+                                                                        <Label prefHeight="20.0" prefWidth="11.0" text="x">
+                                                                           <font>
+                                                                              <Font size="22.0" />
+                                                                           </font>
+                                                                        </Label>
+                                                                        <Label text="+">
+                                                                           <font>
+                                                                              <Font size="25.0" />
+                                                                           </font>
+                                                                        </Label>
+                                                                        <Text fx:id="Derivé_fx_e" strokeType="OUTSIDE" strokeWidth="0.0" text="00">
+                                                                           <font>
+                                                                              <Font size="15.0" />
+                                                                           </font>
+                                                                           <HBox.margin>
+                                                                              <Insets top="3.0" />
+                                                                           </HBox.margin>
+                                                                        </Text>
+                                                                     </children>
+                                                                     <padding>
+                                                                        <Insets left="5.0" right="5.0" />
+                                                                     </padding>
+                                                                  </HBox>
+                                                               </children>
+                                                            </VBox>
+                                                         </children>
+                                                      </HBox>
+                                                      <HBox alignment="CENTER" layoutX="71.0" layoutY="180.0">
+                                                         <children>
+                                                            <Label text="f'(x) = ">
+                                                               <font>
+                                                                  <Font size="26.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <VBox>
+                                                               <children>
+                                                                  <HBox alignment="CENTER" styleClass="borderBottomHbox" stylesheets="@../../../css/style.css">
+                                                                     <children>
+                                                                        <Text fx:id="Derivé_fx_a1" strokeType="OUTSIDE" strokeWidth="0.0" text="00">
+                                                                           <font>
+                                                                              <Font size="15.0" />
+                                                                           </font>
+                                                                           <HBox.margin>
+                                                                              <Insets top="3.0" />
+                                                                           </HBox.margin>
+                                                                        </Text>
+                                                                        <Label text="x²">
+                                                                           <font>
+                                                                              <Font size="22.0" />
+                                                                           </font>
+                                                                        </Label>
+                                                                        <Label text="+">
+                                                                           <font>
+                                                                              <Font size="25.0" />
+                                                                           </font>
+                                                                        </Label>
+                                                                        <Text fx:id="Derivé_fx_b1" strokeType="OUTSIDE" strokeWidth="0.0" text="00">
+                                                                           <font>
+                                                                              <Font size="15.0" />
+                                                                           </font>
+                                                                           <HBox.margin>
+                                                                              <Insets top="3.0" />
+                                                                           </HBox.margin>
+                                                                        </Text>
+                                                                        <Label prefHeight="20.0" prefWidth="11.0" text="x">
+                                                                           <font>
+                                                                              <Font size="22.0" />
+                                                                           </font>
+                                                                        </Label>
+                                                                        <Label text="+">
+                                                                           <font>
+                                                                              <Font size="25.0" />
+                                                                           </font>
+                                                                        </Label>
+                                                                        <Text fx:id="Derivé_fx_c1" strokeType="OUTSIDE" strokeWidth="0.0" text="00">
+                                                                           <font>
+                                                                              <Font size="15.0" />
+                                                                           </font>
+                                                                           <HBox.margin>
+                                                                              <Insets top="3.0" />
+                                                                           </HBox.margin>
+                                                                        </Text>
+                                                                     </children>
+                                                                     <VBox.margin>
+                                                                        <Insets />
+                                                                     </VBox.margin>
+                                                                     <padding>
+                                                                        <Insets left="5.0" right="5.0" />
+                                                                     </padding>
+                                                                  </HBox>
+                                                                  <HBox alignment="CENTER" styleClass="borderTopHbox" stylesheets="@../../../css/style.css">
+                                                                     <children>
+                                                                        <Text fx:id="Derivé_fx_d1" strokeType="OUTSIDE" strokeWidth="0.0" text="00">
+                                                                           <font>
+                                                                              <Font size="15.0" />
+                                                                           </font>
+                                                                           <HBox.margin>
+                                                                              <Insets top="3.0" />
+                                                                           </HBox.margin>
+                                                                        </Text>
+                                                                        <Label prefHeight="20.0" prefWidth="11.0" text="x">
+                                                                           <font>
+                                                                              <Font size="22.0" />
+                                                                           </font>
+                                                                        </Label>
+                                                                        <Label text="+">
+                                                                           <font>
+                                                                              <Font size="25.0" />
+                                                                           </font>
+                                                                        </Label>
+                                                                        <Text fx:id="Derivé_fx_e1" strokeType="OUTSIDE" strokeWidth="0.0" text="00">
+                                                                           <font>
+                                                                              <Font size="15.0" />
+                                                                           </font>
+                                                                           <HBox.margin>
+                                                                              <Insets top="3.0" />
+                                                                           </HBox.margin>
+                                                                        </Text>
+                                                                     </children>
+                                                                     <padding>
+                                                                        <Insets left="5.0" right="5.0" />
+                                                                     </padding>
+                                                                  </HBox>
+                                                               </children>
+                                                            </VBox>
+                                                         </children>
+                                                      </HBox>
+                                                   </children>
+                                                </AnchorPane>
+                                             </content>
+                                          </ScrollPane>
+                                    </content>
+                                  </TitledPane>
+                                    <TitledPane animated="false" layoutX="10.0" layoutY="60.0" text="Signe de la dérivée f'(x)">
+                                       <content>
+                                          <ScrollPane>
+                                             <content>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefWidth="200.0" />
+                                             </content>
+                                          </ScrollPane>
+                                       </content>
+                                    </TitledPane>
+                                    <TitledPane animated="false" layoutX="10.0" layoutY="86.0" text="Sense de variation">
+                                       <content>
+                                          <ScrollPane>
+                                             <content>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefWidth="200.0" />
+                                             </content>
+                                          </ScrollPane>
+                                       </content>
+                                    </TitledPane>
+                                    <TitledPane animated="false" layoutX="10.0" layoutY="111.0" text="Tableau de variation">
+                                       <content>
+                                          <ScrollPane>
+                                             <content>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefWidth="200.0" />
+                                             </content>
+                                          </ScrollPane>
+                                       </content>
+                                    </TitledPane>
+                                </panes>
+                              </Accordion>
+                           </children>
+                        </AnchorPane>
+                        <VBox alignment="CENTER" spacing="54.0">
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="74.0" prefWidth="275.0">
+                                 <children>
+                                    <Label text="f(x) = ">
+                                       <font>
+                                          <Font size="26.0" />
+                                       </font>
+                                    </Label>
+                                    <VBox>
+                                       <children>
+                                          <HBox alignment="CENTER" styleClass="borderBottomHbox" stylesheets="@../../../css/style.css">
+                                             <children>
+                                                <TextField fx:id="a" prefHeight="25.0" prefWidth="40.0" promptText="a" />
+                                                <Label text="x²">
+                                                   <font>
+                                                      <Font size="22.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label text="+">
+                                                   <font>
+                                                      <Font size="25.0" />
+                                                   </font>
+                                                </Label>
+                                                <TextField fx:id="b" layoutX="15.0" layoutY="16.0" prefHeight="25.0" prefWidth="40.0" promptText="b" />
+                                                <Label prefHeight="20.0" prefWidth="11.0" text="x">
+                                                   <font>
+                                                      <Font size="22.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label text="+">
+                                                   <font>
+                                                      <Font size="25.0" />
+                                                   </font>
+                                                </Label>
+                                                <TextField fx:id="c" layoutX="15.0" layoutY="16.0" prefHeight="25.0" prefWidth="40.0" promptText="c" />
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets />
+                                             </VBox.margin>
+                                             <padding>
+                                                <Insets left="5.0" right="5.0" />
+                                             </padding>
+                                          </HBox>
+                                          <HBox alignment="CENTER" styleClass="borderTopHbox" stylesheets="@../../../css/style.css">
+                                             <children>
+                                                <TextField fx:id="d" layoutX="99.0" layoutY="17.0" prefHeight="25.0" prefWidth="40.0" promptText="d" />
+                                                <Label prefHeight="20.0" prefWidth="11.0" text="x">
+                                                   <font>
+                                                      <Font size="22.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label text="+">
+                                                   <font>
+                                                      <Font size="25.0" />
+                                                   </font>
+                                                </Label>
+                                                <TextField fx:id="e" prefHeight="25.0" prefWidth="40.0" promptText="e" />
+                                             </children>
+                                             <padding>
+                                                <Insets left="5.0" right="5.0" />
+                                             </padding>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                              <GridPane alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="340.0" prefWidth="325.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="80.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="80.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="80.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="60.0" minHeight="10.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="0.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#number" onMouseClicked="#nombreEntié" prefHeight="55.0" prefWidth="100.0" text="1" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font name="System Bold Italic" size="25.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="4.0" />
+                                       </GridPane.margin>
+                                    </Button>
+                                    <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#number" onMouseClicked="#nombreEntié" prefHeight="55.0" prefWidth="100.0" text="2" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font name="System Bold Italic" size="25.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="4.0" />
+                                       </GridPane.margin>
+                                    </Button>
+                                    <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#nombreEntié" prefHeight="55.0" prefWidth="100.0" text="3" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font name="System Bold Italic" size="25.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="4.0" />
+                                       </GridPane.margin>
+                                    </Button>
+                                    <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#nombreEntié" prefHeight="55.0" prefWidth="100.0" text="4" GridPane.rowIndex="2">
+                                       <font>
+                                          <Font name="System Bold Italic" size="25.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="4.0" />
+                                       </GridPane.margin>
+                                    </Button>
+                                    <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#nombreEntié" prefHeight="55.0" prefWidth="100.0" text="5" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                       <font>
+                                          <Font name="System Bold Italic" size="25.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="4.0" />
+                                       </GridPane.margin>
+                                    </Button>
+                                    <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#nombreEntié" prefHeight="55.0" prefWidth="100.0" text="6" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                       <font>
+                                          <Font name="System Bold Italic" size="25.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="4.0" />
+                                       </GridPane.margin>
+                                    </Button>
+                                    <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#nombreEntié" prefHeight="55.0" prefWidth="100.0" text="7" GridPane.rowIndex="3">
+                                       <font>
+                                          <Font name="System Bold Italic" size="25.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="4.0" />
+                                       </GridPane.margin>
+                                    </Button>
+                                    <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#nombreEntié" prefHeight="55.0" prefWidth="100.0" text="8" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                       <font>
+                                          <Font name="System Bold Italic" size="25.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="4.0" />
+                                       </GridPane.margin>
+                                    </Button>
+                                    <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#nombreEntié" prefHeight="55.0" prefWidth="100.0" text="9" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                                       <font>
+                                          <Font name="System Bold Italic" size="25.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="4.0" />
+                                       </GridPane.margin>
+                                    </Button>
+                                    <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#nombreEntié" prefHeight="55.0" prefWidth="100.0" text="0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                       <font>
+                                          <Font name="System Bold Italic" size="25.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="4.0" />
+                                       </GridPane.margin>
+                                    </Button>
+                                    <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#generale" prefHeight="55.0" prefWidth="100.0" text="-" GridPane.rowIndex="4">
+                                       <font>
+                                          <Font name="System Bold Italic" size="25.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="4.0" />
+                                       </GridPane.margin>
+                                    </Button>
+                                    <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#launch" prefHeight="55.0" prefWidth="100.0" text="Lancer" GridPane.columnIndex="2">
+                                       <font>
+                                          <Font name="Arial Bold Italic" size="20.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="4.0" />
+                                       </GridPane.margin>
+                                    </Button>
+                                    <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#virgule" prefHeight="55.0" prefWidth="100.0" text="." GridPane.columnIndex="2" GridPane.rowIndex="4">
+                                       <font>
+                                          <Font name="System Bold Italic" size="25.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="4.0" />
+                                       </GridPane.margin>
+                                    </Button>
+                                    <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#clear" prefHeight="55.0" prefWidth="100.0" text="Effacer">
+                                       <font>
+                                          <Font name="Arial Bold Italic" size="18.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="4.0" />
+                                       </GridPane.margin>
+                                    </Button>
+                                 </children>
+                              </GridPane>
+                           </children>
+                           <padding>
+                              <Insets left="5.0" right="5.0" />
+                           </padding>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>
